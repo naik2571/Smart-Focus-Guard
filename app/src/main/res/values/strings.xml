@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Focus Guard</string>
+    <string name="accessibility_service_description">Interrupts impulsive doom-scrolling in Reels and Shorts with a 10-second mindfulness breathing timer.</string>
+</resources>
