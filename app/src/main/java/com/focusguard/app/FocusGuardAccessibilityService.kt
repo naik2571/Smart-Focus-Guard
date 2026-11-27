@@ -256,9 +256,12 @@ class FocusGuardAccessibilityService : AccessibilityService() {
         settings.isMasterGuardEnabled = false
         isGuardPaused = true
         dismissOverlay()
-        showStatusNotification()
-        Toast.makeText(this, "Smart Focus Guard Stopped", Toast.LENGTH_SHORT).show()
+        notificationManager.cancel(NOTIFICATION_ID)
+        Toast.makeText(this, "Smart Focus Guard Stopped (Dormant)", Toast.LENGTH_SHORT).show()
         Log.d(TAG, "Guard paused via notification action")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            disableSelf()
+        }
     }
 
     private fun resumeGuard() {
